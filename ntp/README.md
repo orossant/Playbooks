@@ -3,8 +3,8 @@ ce playbook permet :
 
 -  installer le service ntpd
 -  modifier ntp.conf a partir d'un template qui utilise des serveurs ntp europeen
--  arrete le service ntp pour le synchroniser avec la machine manager (centos0)
--  enable et start le service ntp
+-  arreter le service ntp pour le synchroniser avec la machine manager (centos0)
+-  enabler et demarrer le service ntp
 
 # Utilisation
 
