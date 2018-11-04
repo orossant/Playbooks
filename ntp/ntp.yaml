@@ -18,7 +18,7 @@
     tags: ntp
  
   - name: Sync time initialy
-    shell: ntpdate centos0
+    shell: ntpdate 0.pool.ntp.org
     tags: ntp
 
   - name: Make sure NTP is started up
