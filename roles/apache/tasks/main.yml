@@ -1,0 +1,22 @@
+---
+# tasks file for role-apache
+- name: Ensure the HTTPd package is installed
+  yum:
+    name: httpd
+    state: present
+
+- name: Ensure the HTTPd service is enabled and running
+  service:
+     name: httpd
+     state: started
+     enabled: True
+
+- name: Ensure the website is present and updated
+  template:
+    src: index.html.j2
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart apache
