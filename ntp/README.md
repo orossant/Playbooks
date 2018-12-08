@@ -8,21 +8,22 @@ ce playbook permet :
 
 # Utilisation
 
-ansible-playbook -i hosts ntp.yaml -k -K -s
+sudo ansible-playbook -i hosts ntp.yaml -k -K -s
 
 
 ## Verifications
-date -R
-ntpq -p
+sudo date -R
+sudo ntpq -p
 
 ## Commandes utiles  
-systemctl status ntpd
-systemctl enable ntpd
-systemctl start ntpd
+sudo systemctl status ntpd
+sudo systemctl enable ntpd
+sudo systemctl start ntpd
 
-## Resynchro manuelle
-systemctl stop ntpd
-ntpdate 192.168.169.136
+## Resynchro manuelle sur centos0
+sudo systemctl stop ntpd
+sudo ntpdate 0.pool.ntp.org
+sudo systemctl start ntpd
 
 
 # Sources Web
@@ -33,11 +34,9 @@ sources utilisées :
 - https://www.pool.ntp.org/zone/fr
 
 
-# Divers
-
-aspects connexes : 
+# Divers : aspects connexes : 
 - cle ssh : https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
-- cpoie cle ssh : https://www.ssh.com/ssh/copy-id
+- copie cle ssh : https://www.ssh.com/ssh/copy-id
 - centos hostname : https://support.rackspace.com/how-to/centos-hostname-change/
 - centos repo : https://blog.microlinux.fr/yum-config/, http://www.mgroup.fr/index.php?pages/centos_depots_tiers, https://fedoraproject.org/wiki/EPEL
 - markdown : https://dillinger.io/
