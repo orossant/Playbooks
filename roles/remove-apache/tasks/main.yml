@@ -1,0 +1,19 @@
+---
+# tasks file for role remove-apache
+#- name: Ensure the HTTPd service is disabled and stopped
+#  service:
+#     name: httpd
+#     state: stopped
+#     enabled: False
+
+- name: Ensure the HTTPd package is uninstalled
+  yum:
+    name: httpd
+    state: removed
+
+- name: Effacement du fichier index.html
+  file:
+    path: /var/www/html/index.html
+    owner: root
+    group: root
+    state: absent

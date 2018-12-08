@@ -1,0 +1,7 @@
+---
+- hosts: servers
+
+  roles:
+    - apache
+    - remove-apache
+

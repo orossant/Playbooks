@@ -2,6 +2,7 @@
 127.0.0.1
 
 [servers]
+centos0
 centos1
 centos2
 centos3
